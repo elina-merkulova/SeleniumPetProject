@@ -26,4 +26,18 @@ public class ClientDataGenerator {
         int randomNumber = (int) (Math.random() * 100000000);
         return "2" + String.format("%07d", randomNumber);
     }
+    public String randomString(Integer length) {
+        String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        int STRING_LENGTH = length ;
+
+        StringBuilder stringBuilder = new StringBuilder(STRING_LENGTH);
+
+        for (int i = 0; i < STRING_LENGTH; i++) {
+            int randomIndex = random.nextInt(CHARACTERS.length());
+            char randomChar = CHARACTERS.charAt(randomIndex);
+            stringBuilder.append(randomChar);
+        }
+
+        return stringBuilder.toString();
+    }
 }
